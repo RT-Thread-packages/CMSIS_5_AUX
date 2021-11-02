@@ -37,7 +37,6 @@ if GetDepend('PKG_CMSIS_NN'):
         src += nn_softmax_src
 
 if GetDepend('PKG_USING_CMSIS_RTOS2'):
-    src += Glob(cmsis_path + 'RTOS2/Source/*.c')
     CPPPATH = CPPPATH + [cmsis_path + 'RTOS2/Include']
 
 # Definitions for MATH
