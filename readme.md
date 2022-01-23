@@ -1,6 +1,6 @@
 # CMSIS-5 auxiliary package
 
-本软件包为官方CMSIS_5软件包的辅助软件包，本软件包对用户不可见，也不需要用户进行选定，在用户选择使用CMSIS_5软件包时，会自动选定本软件包。其原因是，CMSIS_5官方仓库不允许我们提交Sconscript脚本，但是为了能让RT-Thread小伙伴使用到最新的CMSIS代码，采用了一种新的软件包同步方案：
+本软件包为[官方CMSIS_5软件包](https://github.com/ARM-software/CMSIS_5)的辅助软件包，本软件包对用户不可见，也不需要用户进行选定，在用户选择使用CMSIS_5软件包时，会自动选定本软件包。其原因是，CMSIS_5官方仓库不允许我们提交Sconscript脚本，但是为了能让RT-Thread小伙伴使用到最新的CMSIS代码，采用了一种新的软件包同步方案：
 
 1） 将官方CMSIS-5仓库注册为RT-Thread软件包，但是由于该仓库内没有Sconscript脚本，无法构建功能；
 
