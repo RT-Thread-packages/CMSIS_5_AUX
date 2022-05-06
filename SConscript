@@ -11,10 +11,8 @@ CPPDEFINES = []
 cmsis_folder_name = 'CMSIS_5-latest'
 cmsis_path = cwd + '/../' + cmsis_folder_name + '/CMSIS/'
 
-#if GetDepend('PKG_CMSIS_CORE'):
-#    CPPPATH = CPPPATH + [cmsis_path + 'Core/Include']
-#    core_include = Glob(cmsis_path + 'Core/Include/*.h'
-#    src += core_include
+if GetDepend('PKG_CMSIS_CORE'):
+    CPPPATH = CPPPATH + [cmsis_path + 'Core/Include']
 
 if GetDepend('PKG_CMSIS_DSP'):
     CPPPATH = CPPPATH + [cmsis_path + 'DSP/Include']
