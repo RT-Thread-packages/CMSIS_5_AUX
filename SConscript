@@ -3,15 +3,67 @@ from building import *
 
 group      = []
 cwd        = GetCurrentDir()
-src        = []
 CPPPATH    = []
+src        = []
+
 CPPDEFINES = []
 
 cmsis_folder_name = 'CMSIS_5-latest'
 cmsis_path = cwd + '/../' + cmsis_folder_name + '/CMSIS/'
 
-if GetDepend('PKG_CMSIS_CORE'):
-    CPPPATH = CPPPATH + [cmsis_path + 'Core/Include']
+# if GetDepend('PKG_CMSIS_CORE'):
+#     CPPPATH = CPPPATH + [cmsis_path + 'Core/Include']
+
+if GetDepend('PKG_CMSIS_DSP'):
+    CPPPATH = CPPPATH + [cmsis_path + 'DSP/Include']
+
+    dsp_BasicMathFunctions_src = Glob(cmsis_path + 'DSP/Source/BasicMathFunctions/*.c')
+    dsp_BayesFunctions_src = Glob(cmsis_path + 'DSP/Source/BayesFunctions/*.c')
+    dsp_CommonTables_src = Glob(cmsis_path + 'DSP/Source/CommonTables/*.c')
+    dsp_ComplexMathFunctions_src = Glob(cmsis_path + 'DSP/Source/ComplexMathFunctions/*.c')
+    dsp_ControllerFunctions_src = Glob(cmsis_path + 'DSP/Source/ControllerFunctions/*.c')
+    dsp_DistanceFunctions_src = Glob(cmsis_path + 'DSP/Source/DistanceFunctions/*.c')
+    dsp_FastMathFunctions_src = Glob(cmsis_path + 'DSP/Source/FastMathFunctions/*.c')
+    dsp_FilteringFunctions_src = Glob(cmsis_path + 'DSP/Source/FilteringFunctions/*.c')
+    dsp_InterpolationFunctions_src = Glob(cmsis_path + 'DSP/Source/InterpolationFunctions/*.c')
+    dsp_MatrixFunctions_src = Glob(cmsis_path + 'DSP/Source/MatrixFunctions/*.c')
+    dsp_QuaternionMathFunctions_src = Glob(cmsis_path + 'DSP/Source/QuaternionMathFunctions/*.c')
+    dsp_StatisticsFunctions_src = Glob(cmsis_path + 'DSP/Source/StatisticsFunctions/*.c')
+    dsp_SupportFunctions_src = Glob(cmsis_path + 'DSP/Source/SupportFunctions/*.c')
+    dsp_SVMFunctions_src = Glob(cmsis_path + 'DSP/Source/SVMFunctions/*.c')
+    dsp_TransformFunctions_src = Glob(cmsis_path + 'DSP/Source/TransformFunctions/*.c')
+
+    if GetDepend('PKG_CMSIS_DSP_BasicMathFunctions'):
+        src += dsp_BasicMathFunctions_src
+    if GetDepend('PKG_CMSIS_DSP_BayesFunctions'):
+        src += dsp_BayesFunctions_src
+    if GetDepend('PKG_CMSIS_DSP_CommonTables'):
+        src += dsp_CommonTables_src
+    if GetDepend('PKG_CMSIS_DSP_ComplexMathFunctions'):
+        src += dsp_ComplexMathFunctions_src
+    if GetDepend('PKG_CMSIS_DSP_ControllerFunctions'):
+        src += dsp_ControllerFunctions_src
+    if GetDepend('PKG_CMSIS_DSP_DistanceFunctions'):
+        src += dsp_ControllerFunctions_src
+    if GetDepend('PKG_CMSIS_DSP_FastMathFunctions'):
+        src += dsp_FastMathFunctions_src
+    if GetDepend('PKG_CMSIS_DSP_FilteringFunctions'):
+        src += dsp_FilteringFunctions_src
+    if GetDepend('PKG_CMSIS_DSP_InterpolationFunctions'):
+        src += dsp_InterpolationFunctions_src
+    if GetDepend('PKG_CMSIS_DSP_MatrixFunctions'):
+        src += dsp_MatrixFunctions_src
+    if GetDepend('PKG_CMSIS_DSP_QuaternionMathFunctions'):
+        src += dsp_QuaternionMathFunctions_src
+    if GetDepend('PKG_CMSIS_DSP_StatisticsFunctions'):
+        src += dsp_StatisticsFunctions_src
+    if GetDepend('PKG_CMSIS_DSP_SupportFunctions'):
+        src += dsp_SupportFunctions_src
+    if GetDepend('PKG_CMSIS_DSP_SVMFunctions'):
+        src += dsp_SVMFunctions_src
+    if GetDepend('PKG_CMSIS_DSP_TransformFunctions'):
+        src += dsp_TransformFunctions_src
+
 
 if GetDepend('PKG_CMSIS_NN'):
     CPPPATH = CPPPATH + [cmsis_path + 'NN/Include']
