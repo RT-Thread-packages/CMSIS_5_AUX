@@ -53,6 +53,10 @@ if GetDepend('PKG_CMSIS_NN'):
 
     if GetDepend('PKG_CMSIS_NN_ACTIVATION'):
         src += Glob(cmsis_path + 'NN/Source/ActivationFunctions/*.c')
+    if GetDepend('PKG_CMSIS_NN_BASIC_MATH'):
+        src += Glob(cmsis_path + 'NN/Source/BasicMathFunctions/*.c')
+    if GetDepend('PKG_CMSIS_NN_CONCATENATION'):
+        src += Glob(cmsis_path + 'NN/Source/ConcatenationFunctions/*.c')
     if GetDepend('PKG_CMSIS_NN_CONVOLUTION'):
         src += Glob(cmsis_path + 'NN/Source/ConvolutionFunctions/*.c')
     if GetDepend('PKG_CMSIS_NN_FULLY_CONNECTED'):
@@ -61,6 +65,10 @@ if GetDepend('PKG_CMSIS_NN'):
         src += Glob(cmsis_path + 'NN/Source/NNSupportFunctions/*.c')
     if GetDepend('PKG_CMSIS_NN_POOLING'):
         src += Glob(cmsis_path + 'NN/Source/PoolingFunctions/*.c')
+    if GetDepend('PKG_CMSIS_NN_RESHAPE'):
+        src += Glob(cmsis_path + 'NN/Source/ReshapeFunctions/*.c')
+    if GetDepend('PKG_CMSIS_NN_SVDF'):
+        src += Glob(cmsis_path + 'NN/Source/SVDFunctions/*.c')
     if GetDepend('PKG_CMSIS_NN_SOFTMAX'):
         src += Glob(cmsis_path + 'NN/Source/SoftmaxFunctions/*.c')
 
