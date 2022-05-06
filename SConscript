@@ -3,9 +3,8 @@ from building import *
 
 group      = []
 cwd        = GetCurrentDir()
-CPPPATH    = []
 src        = []
-
+CPPPATH    = []
 CPPDEFINES = []
 
 cmsis_folder_name = 'CMSIS_5-latest'
