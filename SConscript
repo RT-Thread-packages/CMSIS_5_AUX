@@ -15,6 +15,7 @@ if GetDepend('PKG_CMSIS_CORE'):
 
 if GetDepend('PKG_CMSIS_DSP'):
     CPPPATH = CPPPATH + [cmsis_path + 'DSP/Include']
+    CPPPATH = CPPPATH + [cmsis_path + 'DSP/Include/dsp']
 
     dsp_BasicMathFunctions_src = Glob(cmsis_path + 'DSP/Source/BasicMathFunctions/*.c')
     dsp_BayesFunctions_src = Glob(cmsis_path + 'DSP/Source/BayesFunctions/*.c')
