@@ -39,6 +39,13 @@ if GetDepend('PKG_CMSIS_NN'):
 if GetDepend('PKG_USING_CMSIS_RTOS2'):
     CPPPATH = CPPPATH + [cmsis_path + 'RTOS2/Include']
 
+if GetDepend('PKG_USING_CMSIS_RTOS1_V1'):
+    CPPPATH = CPPPATH + [cmsis_path + 'RTOS/Template']
+
+if GetDepend('PKG_USING_CMSIS_RTOS1_V2'):
+    CPPPATH = CPPPATH + [cmsis_path + 'RTOS2/Template']
+    src += Glob(cmsis_path + 'RTOS2/Template/*.c')
+
 # Definitions for MATH
 if GetDepend('ARCH_ARM_CORTEX_M7'):
     CPPDEFINES += ['ARM_MATH_CM7']
