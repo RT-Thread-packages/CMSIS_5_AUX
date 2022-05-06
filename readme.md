@@ -7,3 +7,5 @@
 2） 因此构建工程的任务交给了CMSIS_5_AUX辅助软件包，该软件包的Sconscript脚本实际上就是CMSIS_5缺的那个Sconscript脚本，在运行时，CMSIS_5_AUX的Sconscript会将目录向上退一级并进入到CMSIS_5软件包文件目录内，对CMSIS_5的源码进行组织。这样就做到了即便CMSIS_5仓库内即便没有RT-Thread的Sconscript脚本，我们也可以使用最新的官方代码了；
 
 3） 对于RT-Thread使用者来讲，CMSIS_5_AUX软件包是不可见的，在选定使用CMSIS_5软件包时，系统会自动也选定CMSIS_5_AUX软件包。
+
+仓库地址：https://github.com/RT-Thread-packages/CMSIS_5_AUX
