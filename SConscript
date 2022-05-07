@@ -36,8 +36,9 @@ if GetDepend('PKG_CMSIS_NN'):
     if GetDepend('PKG_CMSIS_NN_SOFTMAX'):
         src += nn_softmax_src
 
-if GetDepend('PKG_USING_CMSIS_RTOS1'):
-    CPPPATH = CPPPATH + [cmsis_path + 'RTOS/Template']
+if GetDepend('PKG_CMSIS_RTOS2_COMPATIBLE_CMSIS_RTOS1'):
+    CPPPATH = CPPPATH + [cmsis_path + 'RTOS2/Template']
+    src += Glob(cmsis_path + 'RTOS2/Template/*.c')
 
 if GetDepend('PKG_USING_CMSIS_RTOS2'):
     CPPPATH = CPPPATH + [cmsis_path + 'RTOS2/Include']
