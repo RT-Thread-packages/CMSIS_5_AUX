@@ -7,8 +7,22 @@ src        = []
 CPPPATH    = []
 CPPDEFINES = []
 
-cmsis_folder_name = 'CMSIS_5-latest'
-cmsis_path = cwd + '/../' + cmsis_folder_name + '/CMSIS/'
+packages_root_path = cwd + '/../'
+
+def find_CMSIS_5_folder(root_path):
+    dirs = os.listdir(root_path)
+    for dir in dirs:
+        if os.path.isdir(packages_root_path + dir):
+            if "CMSIS_5-" in dir:
+                return dir
+    print("Cannot find CMSIS_5's path!")
+    return None
+
+cmsis_folder_name = find_CMSIS_5_folder(packages_root_path)
+if (cmsis_folder_name == None):
+    Return('group') # if we cannot find the CMSIS folder, it will directly return
+
+cmsis_path = packages_root_path + cmsis_folder_name + '/CMSIS/'
 
 if GetDepend('PKG_CMSIS_CORE'):
     CPPPATH += [cmsis_path + 'Core/Include']
