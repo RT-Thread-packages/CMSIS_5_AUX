@@ -16,6 +16,7 @@ if GetDepend('PKG_CMSIS_CORE'):
 if GetDepend('PKG_CMSIS_DSP'):
     CPPPATH += [cmsis_path + 'DSP/Include']
     CPPPATH += [cmsis_path + 'DSP/Include/dsp']
+    CPPPATH += [cmsis_path + 'DSP/PrivateInclude']
 
     if GetDepend('PKG_CMSIS_DSP_BASIC_MATH'):
         src += Glob(cmsis_path + 'DSP/Source/BasicMathFunctions/*.c')
