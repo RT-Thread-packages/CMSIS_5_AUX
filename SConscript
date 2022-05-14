@@ -33,35 +33,63 @@ if GetDepend('PKG_CMSIS_DSP'):
     CPPPATH += [cmsis_path + 'DSP/PrivateInclude']
 
     if GetDepend('PKG_CMSIS_DSP_BASIC_MATH'):
-        src += Glob(cmsis_path + 'DSP/Source/BasicMathFunctions/*.c')
+        dsp_BasicMathFunctions_path = cmsis_path + 'DSP/Source/BasicMathFunctions/'
+        src += [dsp_BasicMathFunctions_path + 'BasicMathFunctions.c']
+        src += [dsp_BasicMathFunctions_path + 'BasicMathFunctionsF16.c']
     if GetDepend('PKG_CMSIS_DSP_BAYES'):
-        src += Glob(cmsis_path + 'DSP/Source/BayesFunctions/*.c')
+        dsp_BayesFunctions_path = cmsis_path + 'DSP/Source/BayesFunctions/'
+        src += [dsp_BayesFunctions_path + 'BayesFunctions.c']
+        src += [dsp_BayesFunctions_path + 'BayesFunctionsF16.c']
     if GetDepend('PKG_CMSIS_DSP_COMMON_TABLES'):
-        src += Glob(cmsis_path + 'DSP/Source/CommonTables/*.c')
+        dsp_CommonTables_path = cmsis_path + 'DSP/Source/CommonTables/'
+        src += [dsp_CommonTables_path + 'CommonTables.c']
+        src += [dsp_CommonTables_path + 'CommonTablesF16.c']
     if GetDepend('PKG_CMSIS_DSP_COMPLEX_MATH'):
-        src += Glob(cmsis_path + 'DSP/Source/ComplexMathFunctions/*.c')
+        dsp_ComplexMathFunctions_path = cmsis_path + 'DSP/Source/ComplexMathFunctions/'
+        src += [dsp_ComplexMathFunctions_path + 'ComplexMathFunctions.c']
+        src += [dsp_ComplexMathFunctions_path + 'ComplexMathFunctionsF16.c']
     if GetDepend('PKG_CMSIS_DSP_CONTROLLER'):
-        src += Glob(cmsis_path + 'DSP/Source/ControllerFunctions/*.c')
+        dsp_ControllerFunctions_path = cmsis_path + 'DSP/Source/ControllerFunctions/'
+        src += [dsp_ControllerFunctions_path + 'ControllerFunctions.c']
     if GetDepend('PKG_CMSIS_DSP_DISTANCE'):
-        src += Glob(cmsis_path + 'DSP/Source/DistanceFunctions/*.c')
+        dsp_DistanceFunctions_path = cmsis_path + 'DSP/Source/DistanceFunctions/'
+        src += [dsp_DistanceFunctions_path + 'DistanceFunctions.c']
+        src += [dsp_DistanceFunctions_path + 'DistanceFunctionsF16.c']
     if GetDepend('PKG_CMSIS_DSP_FAST_MATH'):
-        src += Glob(cmsis_path + 'DSP/Source/FastMathFunctions/*.c')
+        dsp_FastMathFunctions_path = cmsis_path + 'DSP/Source/FastMathFunctions/'
+        src += [dsp_FastMathFunctions_path + 'FastMathFunctions.c']
+        src += [dsp_FastMathFunctions_path + 'FastMathFunctionsF16.c']
     if GetDepend('PKG_CMSIS_DSP_FILTERING'):
-        src += Glob(cmsis_path + 'DSP/Source/FilteringFunctions/*.c')
+        dsp_FilteringFunctions_path = cmsis_path + 'DSP/Source/FilteringFunctions/'
+        src += [dsp_FilteringFunctions_path + 'FilteringFunctions.c']
+        src += [dsp_FilteringFunctions_path + 'FilteringFunctionsF16.c']
     if GetDepend('PKG_CMSIS_DSP_INTERPOLATION'):
-        src += Glob(cmsis_path + 'DSP/Source/InterpolationFunctions/*.c')
+        dsp_InterpolationFunctions_path = cmsis_path + 'DSP/Source/InterpolationFunctions/'
+        src += [dsp_InterpolationFunctions_path + 'InterpolationFunctions.c']
+        src += [dsp_InterpolationFunctions_path + 'InterpolationFunctionsF16.c']
     if GetDepend('PKG_CMSIS_DSP_MATRIX'):
-        src += Glob(cmsis_path + 'DSP/Source/MatrixFunctions/*.c')
+        dsp_MatrixFunctions_path = cmsis_path + 'DSP/Source/MatrixFunctions/'
+        src += [dsp_MatrixFunctions_path + 'MatrixFunctions.c']
+        src += [dsp_MatrixFunctions_path + 'MatrixFunctionsF16.c']
     if GetDepend('PKG_CMSIS_DSP_QUATERNION_MATH'):
-        src += Glob(cmsis_path + 'DSP/Source/QuaternionMathFunctions/*.c')
-    if GetDepend('PKG_CMSIS_DSP_SVM'):
-        src += Glob(cmsis_path + 'DSP/Source/SVMFunctions/*.c')
+        dsp_QuaternionMathFunctions_path = cmsis_path + 'DSP/Source/QuaternionMathFunctions/'
+        src += [dsp_QuaternionMathFunctions_path + 'QuaternionMathFunctions.c']
     if GetDepend('PKG_CMSIS_DSP_STATISTICS'):
-        src += Glob(cmsis_path + 'DSP/Source/StatisticsFunctions/*.c')
+        dsp_StatisticsFunctions_path = cmsis_path + 'DSP/Source/StatisticsFunctions/'
+        src += [dsp_StatisticsFunctions_path + 'StatisticsFunctions.c']
+        src += [dsp_StatisticsFunctions_path + 'StatisticsFunctionsF16.c']
     if GetDepend('PKG_CMSIS_DSP_SUPPORT'):
-        src += Glob(cmsis_path + 'DSP/Source/SupportFunctions/*.c')
+        dsp_SupportFunctions_path = cmsis_path + 'DSP/Source/SupportFunctions/'
+        src += [dsp_SupportFunctions_path + 'SupportFunctions.c']
+        src += [dsp_SupportFunctions_path + 'SupportFunctionsF16.c']
+    if GetDepend('PKG_CMSIS_DSP_SVM'):
+        dsp_SVMFunctions_path = cmsis_path + 'DSP/Source/SVMFunctions/'
+        src += [dsp_SVMFunctions_path + 'SVMFunctions.c']
+        src += [dsp_SVMFunctions_path + 'SVMFunctionsF16.c']
     if GetDepend('PKG_CMSIS_DSP_TRANSFORM'):
-        src += Glob(cmsis_path + 'DSP/Source/TransformFunctions/*.c')
+        dsp_TransformFunctions_path = cmsis_path + 'DSP/Source/TransformFunctions/'
+        src += [dsp_TransformFunctions_path + 'TransformFunctions.c']
+        src += [dsp_TransformFunctions_path + 'TransformFunctionsF16.c']
 
 if GetDepend('PKG_CMSIS_NN'):
     CPPPATH += [cmsis_path + 'NN/Include']
