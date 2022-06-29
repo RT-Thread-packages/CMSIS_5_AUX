@@ -1,4 +1,5 @@
 import os
+import shutil
 from building import *
 
 group      = []
@@ -22,7 +23,8 @@ cmsis_folder_name = find_CMSIS_5_folder(packages_root_path)
 if (cmsis_folder_name == None):
     Return('group') # if we cannot find the CMSIS folder, it will directly return
 
-cmsis_path = packages_root_path + cmsis_folder_name + '/CMSIS/'
+cmsis_root_path = packages_root_path + cmsis_folder_name
+cmsis_path = cmsis_root_path + '/CMSIS/'
 
 if GetDepend('PKG_CMSIS_CORE'):
     CPPPATH += [cmsis_path + 'Core/Include']
@@ -136,6 +138,14 @@ elif GetDepend('ARCH_ARM_CORTEX_M0'):
 
 if GetDepend('ARCH_ARM_CORTEX_FPU'):
     CPPDEFINES += ['__FPU_PRESENT=1']
+
+#delate non-used files
+try:
+    shutil.rmtree(os.path.join(cmsis_root_path,'.github'))
+    shutil.rmtree(os.path.join(cmsis_root_path,'Device'))
+    shutil.rmtree(os.path.join(cmsis_root_path,'docker'))
+except:
+    pass
 
 group = DefineGroup('CMSIS-5', src, depend = ['PKG_USING_CMSIS_5'], CPPPATH = CPPPATH, LOCAL_CPPDEFINES=CPPDEFINES)
 
